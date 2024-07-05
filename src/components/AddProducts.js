@@ -1,12 +1,15 @@
+// components/AddProducts.js
+
 import React, { useState } from 'react';
 import { storage, db } from '../config/config';
 import {
-    ref,
-    uploadBytesResumable,
-    getDownloadURL 
+  ref,
+  uploadBytesResumable,
+  getDownloadURL 
 } from "firebase/storage";
 
 const AddProducts = () => {
+  <h3>Hello World</h3>
   const [productName, setProductName] = useState('');
   const [productPrice, setProductPrice] = useState(0);
   const [productImg, setProductImg] = useState(null);
@@ -22,7 +25,7 @@ const AddProducts = () => {
       setError('');
     } else {
       setProductImg(null);
-      setError('Please select a valid image type png or jpeg');
+      setError('Please select a valid image type (png or jpeg)');
     }
   };
 
@@ -67,6 +70,7 @@ const AddProducts = () => {
   };
 
   return (
+    
     <div className="container">
       <br />
       <h2>ADD PRODUCTS</h2>
