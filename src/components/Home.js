@@ -4,9 +4,7 @@ import Products from './Products';
 import '../css/Home.css';
 
 const Home = () => {
-  const handleClick = () => {
-    console.log("Button clicked!");
-  };
+ 
 
   return (
     <div className="wrapper">

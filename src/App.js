@@ -4,10 +4,11 @@ import Home from './components/Home';
 import AddProducts from './components/AddProducts';
 import Products from './components/Products';
 import './App.css';
-import { ProductsProvider } from './global/ProductsContext'; // Ensure correct import path
+import { ProductsProvider } from './global/ProductsContext'; // Correct import path
 
-import  Login  from './components/Login'
+import Login from './components/Login';
 import Signup from './components/Signup';
+
 function App() {
   return (
     <div className="App">
@@ -17,8 +18,8 @@ function App() {
             <Route exact path='/' element={<Home />} />
             <Route exact path='/addproducts' element={<AddProducts />} />
             <Route exact path='/products' element={<Products />} /> {/* Added Products Route */}
-           <Route path='/signup' Component={Signup}/>
-           <Route path='/login' Component={Login}/>
+            <Route path='/signup' element={<Signup />} /> {/* Use element instead of Component */}
+            <Route path='/login' element={<Login />} /> {/* Use element instead of Component */}
           </Routes>
         </BrowserRouter>
       </ProductsProvider>

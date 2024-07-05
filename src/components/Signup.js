@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { auth, googleProvider } from '../config/config';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
-
+import { Link } from 'react-router-dom'
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -70,7 +70,12 @@ const Signup = () => {
       </form>
       {error && <span className="error-msg">{error}</span>}
       <hr />
-      <button onClick={handleGoogleSignIn} className="btn btn-primary btn-md mybtn">Sign in with Google</button>
+      <br/>
+      <span>Already have an account? Login
+        <Link to="/login "> Here</Link>
+      </span>
+      {/* <button onClick={handleGoogleSignIn} className="btn btn-primary btn-md mybtn">Sign in with Google</button>
+     */}
     </div>
   );
 };
