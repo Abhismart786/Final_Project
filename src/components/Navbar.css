@@ -1,0 +1,63 @@
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: #1e90ff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .navbar-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit:contain;
+   margin-top: 10%;
+   margin-left: 50%;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
+    width: 100%; 
+    padding-bottom: 10px;
+  }
+  
+  .cart-logo {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+      
+}
+  
+  .navbar-links {
+    display: flex;
+    gap: 10px;
+    padding-right: 5%;
+    /* margin-bottom: 10%; */
+  }
+  
+  .navlink {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    
+}
+  
+  .navlink:hover {
+    background-color: #4682b4; /* Light steel blue for hover effect */
+  }
+  

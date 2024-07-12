@@ -74,8 +74,7 @@ const Signup = () => {
       <span>Already have an account? Login
         <Link to="/login "> Here</Link>
       </span>
-      {/* <button onClick={handleGoogleSignIn} className="btn btn-primary btn-md mybtn">Sign in with Google</button>
-     */}
+     
     </div>
   );
 };

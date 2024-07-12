@@ -1,30 +1,27 @@
-import React from 'react';
+
+
+import React, { Component } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-import AddProducts from './components/AddProducts';
 import Products from './components/Products';
 import './App.css';
-import { ProductsProvider } from './global/ProductsContext'; // Correct import path
-
 import Login from './components/Login';
 import Signup from './components/Signup';
 
-function App() {
-  return (
-    <div className="App">
-      <ProductsProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route exact path='/addproducts' element={<AddProducts />} />
-            <Route exact path='/products' element={<Products />} /> {/* Added Products Route */}
-            <Route path='/signup' element={<Signup />} /> {/* Use element instead of Component */}
-            <Route path='/login' element={<Login />} /> {/* Use element instead of Component */}
-          </Routes>
-        </BrowserRouter>
-      </ProductsProvider>
-    </div>
-  );
-}
+const App = () =>{
+
+    return (
+      <div>
+          <BrowserRouter>
+            <Routes>
+              <Route exact path='/' element={<Home />} />
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/login' element={<Login />} /> 
+            </Routes>
+          </BrowserRouter>
+      </div>
+    );
+  }
+
 
 export default App;

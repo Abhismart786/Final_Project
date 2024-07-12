@@ -1,30 +1,40 @@
-import React,{ useContext } from "react";
-import { ProductsContext } from "../global/ProductsContext";
+import React from "react";
+import { useEffect, useState } from "react";
+import Product from "./Product";
 const Products = () =>{
-    const { products } = useContext(ProductsContext);
-            console.log(products);
+    const [gotData, setGotData] = useState(null);
+    useEffect(() => {
+        API_CALL()
+    },[])
+
+    async function API_CALL (){
+        try{
+            const response = await fetch ("https://fakestoreapi.com/products");
+            if (!response.ok){
+                console.log("Error")
+            }
+            const data = await response.json();
+            setGotData(data)
+        }
+        catch(err){
+            console.log(err.message)
+        }
+    }
+
     return(
-        <>
-         {products.length !== 0 && <h1>Products</h1>}
-            <div className='products-container'>
-                {products.length === 0 && <div>slow internet...no products to display</div>}
-                {products.map(product => (
-                    <div className='product-card' key={product.ProductID}>
-                        <div className='product-img'>
-                            <img src={product.ProductImg} alt="not found" />
-                        </div>
-                        <div className='product-name'>
-                            {product.ProductName}
-                        </div>
-                        <div className='product-price'>
-                            Rs {product.ProductPrice}.00
-                    </div>
-                     <button className='addcart-btn' >ADD TO CART</button> 
-                    </div>
-                ))}
-            </div>
-        
-        </>
+        gotData === null ? <div>Loading data....</div> : 
+        <div style={{
+            display:"flex",
+            flexFlow:"row",
+            flexWrap:"wrap",
+            gap:"10px",
+            overflow:"auto"
+
+        }}>
+            {gotData.map((item,key)=>(
+                <Product item={item} key = {key}></Product>
+            ))}
+        </div>
     )
 }
 export default Products;

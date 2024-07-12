@@ -18,3 +18,19 @@ html.body{
   font-size: 12px;
   font-weight: 600;
 }
+.logout-btn {
+  padding: 5px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: hidden;
+  background-color: #2eca8b;
+  margin-left: 10px;
+}
+.wrapper {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
