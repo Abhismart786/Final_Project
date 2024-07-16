@@ -13,13 +13,13 @@ const firebaseConfig = {
   appId: "1:98731158906:web:093943c66fa31b2e75fac3"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
-// Initialize Auth Providers
+
 const googleProvider = new GoogleAuthProvider();
 
 export { auth, db, storage, googleProvider };

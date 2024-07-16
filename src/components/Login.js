@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
-import { auth } from '../config/config'; // Adjust import path as per your project structure
+
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../config/config';
 import { signInWithEmailAndPassword } from 'firebase/auth';
+import { CartContext } from './CartContext';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Use useNavigate for navigation
+  const { signInUser } = useContext(CartContext);
 
   const login = async (e) => {
     e.preventDefault();
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       setEmail('');
       setPassword('');
       setError('');
-      navigate('/'); // Use navigate instead of history.push
+      signInUser(userCredential.user);
     } catch (err) {
       setError(err.message);
     }
