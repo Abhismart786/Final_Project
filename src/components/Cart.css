@@ -1,5 +1,9 @@
+/* *{
+  background-color: #ccc;
+} */
 .cart-container {
     padding: 20px;
+    background-color:rgba(0, 0, 0, 0.575);
   }
   
   .cart-items {

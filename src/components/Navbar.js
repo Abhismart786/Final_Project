@@ -13,19 +13,22 @@ const Navbar = () => {
     <div className="navbar">
         
       <div className="navbar-logo">
+        {/* link to the home page */}
         <Link to="/">
           <img src={logo} alt="E-commerce Logo" width="100px" />
         </Link>
       </div>
       <div className='heading'>
-        <h2>WELCOME TO SHOPPING APP</h2>
+        <h2>WELCOME TO QUICK BUY APP</h2>
       </div>
       <div className="navbar-right">
+        {/* link to the cart page */}
         <Link to="/cart" className="cart-link">
           <img src={cartLogo} alt="Add to Cart Logo" className="cart-logo" />
           <span className="cart-count">{cartItems.length}</span>
         </Link>
         <div className="navbar-links">
+          {/* Checking if the user press logout page navigate to the login page  */}
           {user ? (
             <span onClick={signOutUser} className="navlink">LOGOUT</span>
           ) : (

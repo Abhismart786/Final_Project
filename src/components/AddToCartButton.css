@@ -13,7 +13,7 @@
     background-color: #218838;
   }
   
-  /* src/components/Products.css */
+  /* Products.css */
   .products {
     display: flex;
     flex-wrap: wrap;
@@ -35,7 +35,7 @@
     margin: 0 0 10px;
   }
   
-  /* src/components/Navbar.css */
+  /*Navbar.css */
   .navbar {
     display: flex;
     justify-content: space-between;

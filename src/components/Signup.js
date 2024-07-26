@@ -4,22 +4,25 @@ import { auth, googleProvider } from '../config/config';
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { CartContext } from './CartContext';
 import { Link } from 'react-router-dom';
-
+import "./Signup.css"
+// function signup
 const Signup = () => {
+  // initializing variable by using set function with the help of usestate
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const { signInUser } = useContext(CartContext);
-
+// function used to get authentication from firebase to create a new user
   const handleSignup = async (e) => {
     e.preventDefault();
-    setError('');
+    setError('');// clear any previous error
     try {
+      //create a new user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       signInUser(userCredential.user);
     } catch (error) {
-      setError(error.message);
+      setError(error.message);// error message if signin is fail
     }
   };
 
@@ -33,6 +36,7 @@ const Signup = () => {
   };
 
   return (
+    // main class container
     <div className="container">
       <br />
       <h2>Signup</h2>
@@ -68,12 +72,15 @@ const Signup = () => {
           value={password}
         />
         <br />
+        {/* button to submit the form */}
         <button type="submit" className="btn btn-success btn-md mybtn">Register</button>
       </form>
+      {/* display an error message if any error */}
       {error && <span className="error-msg">{error}</span>}
       <hr />
       <br/>
       <span>Already have an account? Login
+        {/* link to nevigate to the login page */}
         <Link to="/login"> Here</Link>
       </span>
     </div>

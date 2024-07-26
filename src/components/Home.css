@@ -1,4 +1,4 @@
-/* src/components/Home.css */
+/*Home.css */
 .home-container {
     display: flex;
     flex-direction: column;
@@ -13,7 +13,40 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* background-color:lightgray; */
     width: 100%;
     padding: 20px;
   }
+  .home-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about-us-button-container {
+    margin-top: 20px;
+  }
+  
+  .about-us-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .home-container {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px; /* Footer height */
+  }
+  
+  .about-us-button-container {
+    margin-top: 20px;
+  }
+  
+  .about-us-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
   
