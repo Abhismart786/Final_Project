@@ -8,7 +8,7 @@ const Cart = () => {
   const { cartItems, removeFromCart } = useContext(CartContext);
   const [checkoutMessage, setCheckoutMessage] = useState('');
 
-  // Calculate total price of all items in the cart
+
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price, 0);
   };
