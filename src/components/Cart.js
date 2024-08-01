@@ -4,14 +4,14 @@ import './Cart.css';
 import Footer from "./Footer";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const { cartItems, removeFromCart,clearCart } = useContext(CartContext);
   const [checkoutMessage, setCheckoutMessage] = useState('');
   const [isCheckedOut, setIsCheckedOut] = useState(false);
-
+// this is  the function of getting total price of the products
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price, 0);
   };
-
+// remove function used to remove items from the cart
   const handleRemoveFromCart = (itemId) => {
     if (isCheckedOut) {
       alert('Checkout is done. You cannot remove items.');
@@ -21,8 +21,12 @@ const Cart = () => {
   };
 
   const handleCheckout = () => {
-    setCheckoutMessage('Thank you for shopping!');
     setIsCheckedOut(true);
+    clearCart();
+    setTimeout(() => {
+      setCheckoutMessage('Thank you for shopping!');
+      alert('Thank you for shopping!');
+    }, 0)
     // Additional logic for checkout process
   };
 
@@ -31,7 +35,7 @@ const Cart = () => {
       <h2>My Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty</p>
-      ) : (
+      ) : (// this is ternary operator if the condition if cart is empty upper portion is appear else lower portion will appear
         <div className="cart-items">
           {cartItems.map((item, index) => (
             <div key={index} className="cart-item">
@@ -49,6 +53,7 @@ const Cart = () => {
             </div>
           ))}
           <div className="cart-total">
+            {/* calling function to get total price */}
             <p>Total: ${getTotalPrice()}</p>
             <button className="checkout-button" onClick={handleCheckout}>
               Checkout
@@ -63,3 +68,4 @@ const Cart = () => {
 };
 
 export default Cart;
+
