@@ -19,7 +19,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className='heading'>
-        <h2>WELCOME TO QUICK BUY APP</h2>
+        <h3>QUICK BUY APP</h3>
       </div>
       <div className="navbar-right">
         {/* link to the cart page */}
