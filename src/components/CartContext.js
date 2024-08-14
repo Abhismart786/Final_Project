@@ -16,6 +16,7 @@ export const CartProvider = ({ children }) => {
       navigate('/signup');
     }
   };
+  // function used to clear display after checkout
   const clearCart = () => {
     setCartItems([]);
   };

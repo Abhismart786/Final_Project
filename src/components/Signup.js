@@ -1,42 +1,36 @@
 
+
 import React, { useState, useContext } from 'react';
 import { auth } from '../config/config';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { CartContext } from './CartContext';
 import { Link } from 'react-router-dom';
-import "./Signup.css"
-// function signup
+import './Signup.css';
+
 const Signup = () => {
-  // initializing variable by using set function with the help of usestate
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
   const { signInUser } = useContext(CartContext);
-// function used to get authentication from firebase to create a new user
+
   const handleSignup = async (e) => {
     e.preventDefault();
-    setError('');// clear any previous error
+    setError(''); // Clear any previous error
     try {
-      //create a new user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       signInUser(userCredential.user);
     } catch (error) {
-      setError(error.message);// error message if signin is fail
+      setError(error.message); // Error message if sign-in fails
     }
   };
 
-  // const handleGoogleSignIn = async () => {
-  //   try {
-  //     const result = await signInWithPopup(auth, googleProvider);
-  //     signInUser(result.user);
-  //   } catch (error) {
-  //     console.error('Error during sign-in:', error);
-  //   }
-  // };
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
-    // main class container
     <div className="container">
       <br />
       <h2>Signup</h2>
@@ -64,23 +58,25 @@ const Signup = () => {
         <br />
         <label htmlFor="Password">Password</label>
         <br />
-        <input
-          type="password"
-          className="form-control"
-          required
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
+        <div className="password-wrapper">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            className="form-control"
+            required
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          <span onClick={togglePasswordVisibility} className="password-toggle-icon">
+            {showPassword ? '🙈' : '👁️'}
+          </span>
+        </div>
         <br />
-        {/* button to submit the form */}
         <button type="submit" className="btn btn-success btn-md mybtn">Register</button>
       </form>
-      {/* display an error message if any error */}
       {error && <span className="error-msg">{error}</span>}
       <hr />
-      <br/>
+      <br />
       <span>Already have an account? Login
-        {/* link to nevigate to the login page */}
         <Link to="/login"> Here</Link>
       </span>
     </div>
@@ -88,4 +84,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
