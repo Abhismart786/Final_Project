@@ -22,15 +22,15 @@
     text-align: center;
   }
   
-  .about-us-button-container {
+  /* .about-us-button-container {
     margin-top: 20px;
   }
-  
-  .about-us-button {
+   */
+  /* .about-us-button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-  }
+  } */
   .home-container {
     padding: 20px;
     text-align: center;
@@ -39,7 +39,7 @@
     padding-bottom: 60px; /* Footer height */
   }
   
-  .about-us-button-container {
+  /* .about-us-button-container {
     margin-top: 20px;
   }
   
@@ -47,6 +47,6 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-  }
+  }  */
   
   

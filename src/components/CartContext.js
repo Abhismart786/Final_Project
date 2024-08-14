@@ -16,10 +16,27 @@ export const CartProvider = ({ children }) => {
       navigate('/signup');
     }
   };
-  // remove items  from the cart component
-  const removeFromCart = (itemId) => {
-    setCartItems(cartItems.filter(item => item.id !== itemId));
+  const clearCart = () => {
+    setCartItems([]);
   };
+  // remove items  from the cart component
+  
+  const removeFromCart = (itemId) => {
+    // Find the index of the first item that matches the itemId
+    const index = cartItems.findIndex(item => item.id === itemId);
+  
+    if (index !== -1) {
+      // Create a new array with the item at the found index removed
+      const newCartItems = [
+        ...cartItems.slice(0, index),  // Items before the found index
+        ...cartItems.slice(index + 1)  // Items after the found index
+      ];
+      
+      // Update the state with the new array
+      setCartItems(newCartItems);
+    }
+  };
+  
  // if the user signin successfully
   const signInUser = (user) => {
     setUser(user);
@@ -42,7 +59,8 @@ export const CartProvider = ({ children }) => {
             removeFromCart,  // Function to remove an item from the cart
             user,            // Current authenticated user
             signInUser,      // Function to sign in the user
-            signOutUser      // Function to sign out the user
+            signOutUser,      // Function to sign out the user
+            clearCart
         }}
     >
       {/* Render the children components that will have access to the CartContext values */}

@@ -3,7 +3,8 @@
 } */
 .cart-container {
     padding: 20px;
-    background-color:rgba(0, 0, 0, 0.575);
+    background-color:white;
+    height:50%;
   }
   
   .cart-items {
@@ -18,8 +19,8 @@
   }
   
   .cart-item-image {
-    width: 100%;
-    height: auto;
+    width: 70%;
+    height: 50%;
   }
   
   .cart-item-details {
@@ -43,6 +44,7 @@
     padding: 10px;
     background-color: #f8f9fa;
     border: 1px solid #ccc;
+    height: 40%;
   }
   
   .checkout-button {

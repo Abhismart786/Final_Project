@@ -1,6 +1,6 @@
 
 .products {
-  /* background-color: lightslategray; */
+   background-color: lightslategray; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

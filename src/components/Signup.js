@@ -1,7 +1,7 @@
 
 import React, { useState, useContext } from 'react';
-import { auth, googleProvider } from '../config/config';
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { auth } from '../config/config';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { CartContext } from './CartContext';
 import { Link } from 'react-router-dom';
 import "./Signup.css"
@@ -26,14 +26,14 @@ const Signup = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
-      signInUser(result.user);
-    } catch (error) {
-      console.error('Error during sign-in:', error);
-    }
-  };
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     const result = await signInWithPopup(auth, googleProvider);
+  //     signInUser(result.user);
+  //   } catch (error) {
+  //     console.error('Error during sign-in:', error);
+  //   }
+  // };
 
   return (
     // main class container
