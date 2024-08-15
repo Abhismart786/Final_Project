@@ -1,18 +1,22 @@
 .footer-container {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
     padding: 20px;
     text-align: center;
-    position: relative;
+    position: fixed;
+    bottom: 0px;
     width: 100%;
   }
   
-  .footer-content p {
-    margin: 5px 0;
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .about-us-button {
-    margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;

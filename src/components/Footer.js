@@ -13,8 +13,8 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-content">
         <p>&copy; {new Date().getFullYear()} OUICK BUY. All rights reserved.</p>
-        <p>Contact us: info@QuickBuy.com</p>
         <button className="about-us-button" onClick={navigateToAboutUs}>About Us</button>
+        <p>Contact us: info@QuickBuy.com</p>
       </div>
     </footer>
   );

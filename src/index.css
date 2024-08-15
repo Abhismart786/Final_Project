@@ -14,6 +14,22 @@ html.body{
     width:100%;
   }
 }
+/*@media (max-width:500px){
+  .navbar-logo img {
+    width: 20px;
+    height: 20px;
+    object-fit:contain;
+  }
+  .heading{
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+  .navbar-left{
+    display: flex;
+    flex-direction: column;
+  }
+}*/
 .error-msg{
   color: red;
   font-size: 12px;

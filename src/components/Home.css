@@ -7,6 +7,9 @@
   
   .navbar-container {
     width: 100%;
+    top: 0px;
+    position: fixed;
+
   }
   
   .products-container {
@@ -16,6 +19,7 @@
     /* background-color:lightgray; */
     width: 100%;
     padding: 20px;
+    margin-top: 70px;
   }
   .home-container {
     padding: 20px;

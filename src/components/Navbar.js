@@ -11,16 +11,18 @@ const Navbar = () => {
   
   return (
     <div className="navbar">
+      <div className='navbar-left'>
+        <div className="navbar-logo">
+            {/* link to the home page */}
+            <Link to="/">
+              <img src={logo} alt="E-commerce Logo" width="100px" />
+            </Link>
+          </div>
+          <div className='heading'>
+            <h3>QUICK BUY APP</h3>
+        </div>
+      </div>
         
-      <div className="navbar-logo">
-        {/* link to the home page */}
-        <Link to="/">
-          <img src={logo} alt="E-commerce Logo" width="100px" />
-        </Link>
-      </div>
-      <div className='heading'>
-        <h3>QUICK BUY APP</h3>
-      </div>
       <div className="navbar-right">
         {/* link to the cart page */}
         <Link to="/cart" className="cart-link">
